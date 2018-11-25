@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      fetch('https://api.ipgeolocation.io/ipgeo?apiKey=191923b6da624752992bf193071c9f92')
+        .then(function(response) {
+          return response.json();
+        })
+        .then(function(myJson) {
+          let continentName = myJson.continent_name;
+          switch (continentName) {
+            case "Oceania":
+              window.location = 'https://www.mauriprosailing.com/au';
+              break;
+            case "Europe":
+              window.location = 'https://www.mauriprosailing.com/eu';
+              break;
+            default:
+              window.location = 'https://www.mauriprosailing.com/';
+          }
+        });
+    </script>
+  </body>
+</html>
